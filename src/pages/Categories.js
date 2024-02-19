@@ -6,14 +6,21 @@ export default function Categories(props) {
 
   const [category, setCategory] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const [alertError, setAlert] = useState("");
 
   useEffect(() => {
     fetch("https://api-best-browser-games.vercel.app/categories", {
       method: "GET",
     }).then(async (response) => {
+      console.log(response.status);
       const categories = await response.json();
-      setCategory(categories);
-      setLoaded(true);
+      console.log(categories);
+      if (response.status === 200) {
+        setCategory(categories);
+        setLoaded(true);
+      } else {
+        setAlert("Não foi possível carregar o conteúdo.");
+      }
     });
   }, []);
 

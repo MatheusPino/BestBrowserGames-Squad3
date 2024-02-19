@@ -6,6 +6,7 @@ export default function EditCategory() {
   const navigate = useNavigate();
 
   const { categoryId, categoryName } = useParams();
+  const [alertError, setAlert] = useState("");
 
   const [nameCategory, setNameCategory] = useState({
     name: categoryName,
@@ -23,14 +24,19 @@ export default function EditCategory() {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify(nameCategory),
       }
     ).then(async (response) => {
+      console.log(response.status);
       const resposta = await response.json();
       console.log(resposta);
-      navigate("/categories");
+      if (response.status === 201) {
+        navigate("/categories");
+      } else {
+        setAlert(response.message)
+      }
     });
   };
 

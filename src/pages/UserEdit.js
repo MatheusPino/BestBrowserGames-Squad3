@@ -11,6 +11,8 @@ export default function UserEdit(props) {
     birth = userInfo.birthDate.slice(0, 10);
   }
 
+  const [alertError, setAlert] = useState("");
+
   const [userEdit, setUserEdit] = useState({
     name: userInfo.name,
     email: userInfo.email,
@@ -39,10 +41,15 @@ export default function UserEdit(props) {
         body: JSON.stringify(userEdit),
       }
     ).then(async (response) => {
+      console.log(response.status);
       const resposta = await response.json();
       console.log(resposta);
-      navigate("/user");
-      window.location.reload();
+      if (response.status === 201) {
+        navigate("/user");
+        window.location.reload();
+      } else {
+        setAlert(response.message);
+      }
     });
   };
 

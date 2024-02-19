@@ -5,6 +5,8 @@ export default function AddCategory() {
   // const { userInfo, handleLogout } = props;
   const navigate = useNavigate();
 
+  const [alertError, setAlert] = useState("");
+  
   const [nameCategory, setNameCategory] = useState({
     name: "",
   });
@@ -23,9 +25,14 @@ export default function AddCategory() {
       },
       body: JSON.stringify(nameCategory),
     }).then(async (response) => {
+      console.log(response.status);
       const resposta = await response.json();
       console.log(resposta);
-      navigate("/categories");
+      if (response.status === 201) {
+        navigate("/categories");
+      } else {
+        setAlert(response.message);
+      }
     });
   };
 

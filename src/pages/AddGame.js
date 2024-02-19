@@ -5,6 +5,8 @@ export default function AddGame() {
   // const { userInfo, handleLogout } = props;
   const navigate = useNavigate();
 
+  const [alertError, setAlert] = useState("");
+
   const [newGame, setNewGame] = useState({
     name: "",
     category: {
@@ -42,13 +44,18 @@ export default function AddGame() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify(newGame),
     }).then(async (response) => {
+      console.log(response.status);
       const resposta = await response.json();
       console.log(resposta);
-      navigate("/games");
+      if (response.status === 201) {
+        navigate("/games");
+      } else {
+        setAlert(response.message);
+      }
     });
   };
 
