@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "../components/Categories/Categories.css";
+import AddCategory from "../components/Categories/AddCategory";
+import Button from "../components/Button";
 
 export default function Categories(props) {
   const { userInfo } = props;
+
+  let isAdmin = userInfo.roles === "admin";
 
   const [category, setCategory] = useState([]);
   const [loaded, setLoaded] = useState(false);
@@ -27,44 +32,48 @@ export default function Categories(props) {
   return (
     <>
       {loaded ? (
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500">
-            <thead className="w-full text-xs text-gray-700 uppercase bg-gray-50">
-              <tr>
-                <th className="px-6 py-3">Categorias</th>
-                <th className="px-6 py-3"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {category.map((category) => (
-                <tr className="bg-white border-b" key={category["_id"]}>
-                  <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    {category.name}
-                  </td>
-                  <td>
-                    <Link to={`/`}>
-                      <button className="px-6 py-4">Visualizar jogos</button>
+        <div className="divFlexCenter">
+          <h2 className="title2 titleGradient">CATEGORIAS</h2>
+          <div className="categoryButtons">
+            {isAdmin && (
+              <p className="description">
+                Para editar as categorias de jogos basta clicar na categoria, e
+                para novas categorias basta preencher o campo e clicar no botão
+                de inserir!
+              </p>
+            )}
+            {category.map((category) => (
+              <>
+                {isAdmin ? (
+                  <>
+                    <Link
+                      to={`/editCategory/${category["_id"]}/${category["name"]}`}
+                    >
+                      <Button
+                        text={category.name}
+                        classCSS="btnBorderGradient category"
+                        key={category["_id"]}
+                      />
                     </Link>
-                    {userInfo.roles === "admin" && (
-                      <Link
-                        to={`/editCategory/${category["_id"]}/${category["name"]}`}
-                      >
-                        <button className="px-6 py-4">Editar</button>
-                      </Link>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          {userInfo.roles === "admin" && (
-            <Link to={`/addCategory`}>
-              <button className="px-6 py-4">Cadastrar categoria</button>
-            </Link>
-          )}
+                  </>
+                ) : (
+                  <Button
+                    text={category.name}
+                    classCSS="btnBorderGradient category"
+                    key={category["_id"]}
+                  />
+                )}
+              </>
+            ))}
+            {isAdmin && (
+              <div className="divAddCategory">
+                <AddCategory />
+              </div>
+            )}
+          </div>
         </div>
       ) : (
-        <h3>Loading...</h3>
+        <h3 className="loading">Loading...</h3> || { alertError }
       )}
     </>
   );

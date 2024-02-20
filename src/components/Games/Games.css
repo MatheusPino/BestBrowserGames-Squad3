@@ -1,0 +1,21 @@
+option {
+  background-color: black;
+  color: white;
+}
+
+.inputNewGame {
+  width: 800px;
+}
+
+.inputDescription {
+  height: 115px;
+}
+
+button.insertNewGame {
+  margin-top: 100px;
+  margin-bottom: 170px;
+}
+
+.errorNewGame {
+  margin-bottom: -50px;
+}

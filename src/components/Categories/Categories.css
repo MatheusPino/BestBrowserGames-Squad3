@@ -1,0 +1,47 @@
+.divGradientAddCategory {
+  width: 800px;
+  margin-top: 30px;
+  margin-bottom: 130px;
+}
+
+.addCategory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divAddCategory {
+  margin-top: 200px;
+}
+
+.addCategory > form {
+  width: 800px;
+  display: inline;
+}
+
+.inputNewCategory {
+  width: 610px;
+}
+
+.categoryButtons {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryButtons > p {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+button.category {
+  margin: 30px 12px 0px 12px;
+}
+
+button.insert {
+  margin-left: 15px;
+}
+

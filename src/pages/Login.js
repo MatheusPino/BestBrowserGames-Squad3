@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../components/Login/Login.css";
+import Button from "../components/Button";
+import Input from "../components/Input";
+import BorderTopGradient from "../components/BorderTopGradient";
 
 export default function Login() {
-  // const { userInfo, handleLogout } = props;
-
   const navigate = useNavigate();
 
   const [alertError, setAlert] = useState("");
-
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -19,66 +19,60 @@ export default function Login() {
     setLogin({ ...login, [name]: value });
   };
 
-  const handleSave = () => {
+  const handleLogin = () => {
     fetch("https://api-best-browser-games.vercel.app/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // "Authorization": `Bearer ${localStorage.getItem("token")}`
       },
       body: JSON.stringify(login),
-    })
-      .then(async (response) => {
-        console.log(response.status);
-        const resposta = await response.json();
-        console.log(resposta);
-        if (response.status === 201) {
-          localStorage.setItem("token", resposta.token);
-          navigate("/");
-          window.location.reload();
-        } else {
-          setAlert("Usuário e/ou senha inválido(s).");
-        }
-      })
+    }).then(async (response) => {
+      console.log(response.status);
+      const resposta = await response.json();
+      console.log(resposta);
+      if (response.status === 201) {
+        localStorage.setItem("token", resposta.token);
+        navigate("/");
+        window.location.reload();
+      } else {
+        setAlert("Usuário e/ou senha inválido(s).");
+      }
+    });
   };
 
   return (
     <>
-      <div className="borderTop"></div>
-      <div className="login">
-        <h2 className="">Login</h2>
-        <form className="">
-          <label htmlFor="email">E-mail:</label>
-          <input
-            required
+      <BorderTopGradient />
+      <div className="divFlexCenter">
+        <h2 className="title3 titleLogin">Login</h2>
+        <form className="login">
+          <Input
             type="email"
             name="email"
             value={login.email}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
+            label="E-mail"
           />
 
-          <label htmlFor="password">Senha:</label>
-          <input
-            required
+          <Input
             type="password"
             name="password"
             value={login.password}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
+            label="Senha:"
           />
         </form>
-        <button type="button" onClick={handleSave} className="login">
-          Entrar
-        </button>
+        <Button
+          text="Entrar"
+          classCSS="btnGradient login"
+          handleEvent={handleLogin}
+        />
 
-        <span>{alertError}</span>
+        <span className="errorDescription">{alertError}</span>
 
-        <p className="">Ainda não possui uma conta? Clique aqui!</p>
+        <p className="description descLogin">Ainda não possui uma conta? Clique aqui!</p>
         <Link to="/register">
-          <button type="button" className="register">
-            Cadastre-se
-          </button>
+          <Button text="Cadastre-se" classCSS="btnBorderGradient register" />
         </Link>
       </div>
     </>

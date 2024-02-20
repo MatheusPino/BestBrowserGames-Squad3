@@ -11,10 +11,7 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  padding-left: 93.2px;
-  padding-right: 95.37px;
-  padding-top: 41px;
-  padding-bottom: 40px;
+  justify-content: space-around;
 }
 
 .active-style {
@@ -29,13 +26,11 @@ ul {
 }
 
 li {
-  margin-right: 90px;
+  margin-left: 70px;
 }
 
 .logo {
-  margin-right: 400px;
-  margin-left: 0px;
-  height: 53.581px;
+  margin: 40px;
 }
 
 .userLogin {

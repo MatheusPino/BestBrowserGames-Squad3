@@ -52,7 +52,7 @@ export default function Games(props) {
                     {game.name}
                   </td>
                   <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    {game.category.name || "Sem categoria"}
+                    {game.category? game.category.name : "Sem categoria"}
                   </td>
                   <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                     {game.score || "Sem avaliação"}
@@ -76,7 +76,7 @@ export default function Games(props) {
           )}
         </div>
       ) : (
-        <h3>Loading...</h3>
+        <h3>Loading...</h3> || {alertError}
       )}
     </>
   );

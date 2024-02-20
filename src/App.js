@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import Header from "./components/Header/Header";
 import Categories from "./pages/Categories";
-import AddCategory from "./pages/AddCategory";
+import AccessAdmin from "./pages/AccessAdmin";
 import EditCategory from "./pages/EditCategory";
 import Games from "./pages/Games";
-import AddGame from "./pages/AddGame";
 import GameDetails from "./pages/GameDetails";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -56,7 +55,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home userInfo={userInfo} />} />
           <Route path="/games" element={<Games userInfo={userInfo} />} />
-          <Route path="/addGame" element={<AddGame userInfo={userInfo} />} />
+          <Route
+            path="/accessAdmin"
+            element={<AccessAdmin userInfo={userInfo} />}
+          />
           <Route
             path="/gameDetails/:gameId"
             element={<GameDetails userInfo={userInfo} />}
@@ -64,10 +66,6 @@ export default function App() {
           <Route
             path="/categories"
             element={<Categories userInfo={userInfo} />}
-          />
-          <Route
-            path="/addCategory"
-            element={<AddCategory userInfo={userInfo} />}
           />
           <Route
             path="/editCategory/:categoryId/:categoryName"

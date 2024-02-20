@@ -1,45 +1,19 @@
-.login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.borderTop {
-  height: 1px;
-  background: linear-gradient(90deg, #521d82 0.57%, #f77e75 97.29%);
-}
-
-h2 {
+h2.titleLogin {
   margin-top: 35px;
 }
 
-form {
+form.login {
   display: flex;
   flex-direction: column;
 }
 
-p {
-  font-size: 20px;
+p.descLogin {
   margin-top: 80px;
-}
-
-input {
-  font-size: 16px;
-  border-radius: 5px;
-  border: 2px solid var(--USE, #89347c);
-  background: transparent;
-  color: #868794;
-  width: 498.549px;
-  height: 54px;
-  flex-shrink: 0;
-  margin-top: 7px;
-  padding: 14px 10px;
 }
 
 label {
   font-size: 16px;
-  margin-top: 20px;
+  margin-top: 120px;
 }
 
 button.login {
@@ -64,7 +38,5 @@ button.register {
 }
 
 span {
-  font-size: 16px;
-  color: #868794;
   margin-top: 20px;
 }

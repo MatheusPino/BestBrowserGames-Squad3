@@ -1,76 +1,51 @@
 import "./Header.css";
 import Logo from "./Logo.svg";
 import UserLogin from "./User-login.svg";
+import Button from "../Button.js";
 import { NavLink, Link } from "react-router-dom";
-// import { useEffect, useState } from "react";
 
 export default function Header(props) {
   const { userInfo, handleLogout } = props;
 
+  const activeClass = (navData) => (navData.isActive ? "active-style" : "none");
+
   return (
     <>
       <div className="navbar">
-        <img src={Logo} className="logo" alt="logo Best Browser Games" />
-        <ul className="">
-          <NavLink
-            to="/"
-            className={(navData) =>
-              navData.isActive ? "active-style" : "none"
-            }
-          >
+        <img src={Logo} className="logo" alt="Logo Best Browser Games" />
+        <ul>
+          <NavLink to="/" className={activeClass}>
             <li>Home</li>
           </NavLink>
-          <NavLink
-            to="/games"
-            className={(navData) =>
-              navData.isActive ? "active-style" : "none"
-            }
-          >
+          <NavLink to="/games" className={activeClass}>
             <li>Games</li>
           </NavLink>
-          <NavLink
-            to="/categories"
-            className={(navData) =>
-              navData.isActive ? "active-style" : "none"
-            }
-          >
+          <NavLink to="/categories" className={activeClass}>
             <li>Categorias</li>
           </NavLink>
           {userInfo.name ? (
-            <NavLink
-              to="/user"
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-            >
+            <NavLink to="/user" className={activeClass}>
               <li>Perfil</li>
             </NavLink>
           ) : (
-            <NavLink
-              to="/login"
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-            >
+            <NavLink to="/login" className={activeClass}>
               <li> Entrar</li>
             </NavLink>
           )}
         </ul>
         <div className="dropdown">
-          <img src={UserLogin} className="userLogin" alt="logo" />
+          <img src={UserLogin} className="userLogin" alt="Ícone Usuário" />
           <div className="dropdown-content">
             {userInfo.roles === "admin" && (
               <div>
-                <Link to="/">
-                  <button className="">Cadastrar</button>
+                <Link to="/accessAdmin">
+                  <Button text="Cadastrar" />
                 </Link>
               </div>
             )}
             {userInfo.name && (
               <Link to="/">
-                <button className="" onClick={handleLogout}>
-                  Sair
-                </button>
+                <Button text="Sair" handleEvent={handleLogout} />
               </Link>
             )}
           </div>

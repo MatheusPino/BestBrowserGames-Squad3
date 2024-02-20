@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../components/Register/Register.css";
+import Button from "../components/Button";
+import Input from "../components/Input";
+import BorderTopGradient from "../components/BorderTopGradient";
 
 export default function Register() {
-  // const { userInfo, handleLogout } = props;
-
   const navigate = useNavigate();
 
-  const [alertError, setAlert] = useState("");
-
+  const [alertError, setAlert] = useState([]);
   const [register, setRegister] = useState({
     name: "",
     email: "",
@@ -40,103 +40,77 @@ export default function Register() {
         navigate("/");
         window.location.reload();
       } else {
-        setAlert("Não foi possível realizar o cadastro. Tente novamente.");
+        setAlert(resposta);
       }
     });
   };
 
   return (
     <>
-      <div className="borderTop"></div>
-      <div className="register">
-        <h2 className="">Cadastro</h2>
+      <BorderTopGradient />
+      <div className="divFlexCenter">
+        <h2 className="title3">Cadastro</h2>
         <form className="">
-          <label htmlFor="name" className="">
-            Nome:
-          </label>
-          <input
-            required
+          <Input
+            label="Nome:"
             type="text"
             name="name"
             value={register.name}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
           />
-          <label htmlFor="email" className="">
-            E-mail:
-          </label>
-          <input
-            required
+          <Input
+            label="E-mail:"
             type="email"
             name="email"
             value={register.email}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
           />
-
-          <label htmlFor="password" className="">
-            Senha:
-          </label>
-          <input
-            required
+          <Input
+            label="Senha:"
             type="password"
             name="password"
             value={register.password}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
           />
-          <label htmlFor="confirmPassword" className="">
-            Confirme a senha:
-          </label>
-          <input
-            required
+          <Input
+            label="Confirme a senha:"
             type="password"
             name="confirmPassword"
             value={register.confirmPassword}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
           />
-
-          <label htmlFor="birthDate" className="">
-            Data de nascimento:
-          </label>
-          <input
-            required
+          <Input
+            label="Data de nascimento:"
             type="date"
             name="birthDate"
             value={register.birthDate}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
           />
-
-          <label htmlFor="country" className="">
-            País:
-          </label>
-          <input
-            required
+          <Input
+            label="País:"
             type="text"
             name="country"
             value={register.country}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
           />
-
-          <label htmlFor="state" className="">
-            Estado:
-          </label>
-          <input
-            required
+          <Input
+            label="Estado:"
             type="text"
             name="state"
             value={register.state}
-            onChange={handleInputChange}
-            className=""
+            handleEvent={handleInputChange}
           />
         </form>
-        <span>{alertError}</span>
-        <button type="button" onClick={handleSave} className="registerSend">
-          Cadastrar
-        </button>
+        <span className="errorDescription errorRegister">
+          {alertError.length > 0 &&
+            alertError.map((item) => <p key={item.message}>{item.message}</p>)}
+        </span>
+        <Button
+          text="Cadastrar"
+          type="button"
+          handleEvent={handleSave}
+          classCSS="btnGradient registerSend"
+        />
       </div>
     </>
   );
