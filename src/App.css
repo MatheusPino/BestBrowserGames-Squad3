@@ -47,6 +47,10 @@ body {
   background: linear-gradient(95deg, #521d82 3.55%, #89347c 100%);
 }
 
+.btnGradient:hover {
+  cursor: pointer;
+}
+
 .btnBorderGradient {
   border-radius: 5px;
   border: 2px solid var(--USE, #89347c);
