@@ -13,12 +13,14 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import User from "./pages/User";
 import UserEdit from "./pages/UserEdit";
+import Footer from "./components/Footer/Footer";
+import React from 'react';
 
 export default function App() {
   const token = localStorage.getItem("token");
   let decoded;
   if (token) {
-    decoded = jwtDecode(token);
+// decoded = jwtDecode(token);
   }
 
   const [userInfo, setUserInfo] = useState({
@@ -90,6 +92,7 @@ export default function App() {
           />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
