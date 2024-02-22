@@ -2,14 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-html, body {
+html,
+body {
   background: linear-gradient(90deg, #080c27 0%, #2b153b 100%);
   color: #fff;
   font-family: Poppins, sans-serif;
   height: 100%;
   margin: 0;
 }
-
 
 #root {
   display: flex;
@@ -155,4 +155,13 @@ html, body {
 
 footer {
   margin-top: auto;
+}
+
+.divRestrictedAccess {
+  margin: 40px 0;
+}
+
+.btnRestrictedAccess {
+  width: 250px;
+  margin-top: 40px;
 }

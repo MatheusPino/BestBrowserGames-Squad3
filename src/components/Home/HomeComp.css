@@ -1,78 +1,68 @@
-.geral{
-    margin-left: 8vw;
-    margin-right: 7vw;
-    display: flex;
-    flex-direction: column;
-    gap: 8vh;
-    margin-top: 1vw;
-    margin-bottom: 10vw;
+.geral {
+  margin-left: 8vw;
+  margin-right: 7vw;
+  display: flex;
+  flex-direction: column;
+  gap: 8vh;
+  margin-top: 1vw;
+  margin-bottom: 10vw;
 }
 
 .home1 {
-    display: flex;
-    gap: 6vw;
+  display: flex;
+  gap: 6vw;
 }
 
-.chamada1{
-    display: flex;
-    flex-direction: column;
-    gap: 10vh;
+.chamada1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
 }
 
-.borda{
-    position: absolute;
-    z-index: -1;
+.borda {
+  position: absolute;
+  z-index: -1;
 }
 
 .home2 {
-    display: flex;
-    gap: 7vw;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 2px solid linear-gradient(90deg, #3F5EFB 5.21%, #FC466B 100%);
+  display: flex;
+  gap: 7vw;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid linear-gradient(90deg, #3f5efb 5.21%, #fc466b 100%);
 
-    fill: 
+  /* fill: ; */
 }
 
-.chamada2{
-    padding-top: 8vh;
-    display: flex;
-    flex-direction: column;
-    gap: 10vh;
-    padding-right: 4vw;
+.chamada2 {
+  padding-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  padding-right: 4vw;
 }
 
-.estrela{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.estrela {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .description {
-    color: #fff;
-    font-family: Poppins, sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 
-  .titleGradient {
-    background: linear-gradient(96deg, #F77E75 42.13%, #89347C 83.23%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: Montserrat;
-    font-size: 80px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 108.434%;
-  }
-
-  .title1 {
-    color: #fff;
-    font-family: Montserrat, sans-serif;
-    font-size: 80px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 108.434%; /* 86.747px */
-  }
+.titleGradientHome {
+  background: linear-gradient(96deg, #f77e75 42.13%, #89347c 83.23%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 108.434%;
+}

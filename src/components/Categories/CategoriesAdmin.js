@@ -47,7 +47,7 @@ export default function Categories(props) {
                 {isAdmin ? (
                   <>
                     <Link
-                      to={`/editCategory/${category["_id"]}/${category["name"]}`}
+                      to={`/handleCategory/${category["_id"]}/${category["name"]}`}
                     >
                       <Button
                         text={category.name}

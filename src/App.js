@@ -14,13 +14,13 @@ import Register from "./pages/Register";
 import User from "./pages/User";
 import GamesCategory from "./pages/GamesCategory";
 import Footer from "./components/Footer/Footer";
-import React from 'react';
+import React from "react";
 
 export default function App() {
   const token = localStorage.getItem("token");
   let decoded;
   if (token) {
-decoded = jwtDecode(token);
+    decoded = jwtDecode(token);
   }
 
   const [userInfo, setUserInfo] = useState({
@@ -71,7 +71,7 @@ decoded = jwtDecode(token);
           />
           <Route path="/categories" element={<Categories />} />
           <Route
-            path="/editCategory/:categoryId/:categoryName"
+            path="/handleCategory/:categoryId/:categoryName"
             element={<HandleCategory userInfo={userInfo} />}
           />
           <Route path="/login" element={<Login userInfo={userInfo} />} />
