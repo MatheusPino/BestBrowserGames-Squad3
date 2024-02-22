@@ -5,14 +5,14 @@ import { jwtDecode } from "jwt-decode";
 import Header from "./components/Header/Header";
 import Categories from "./pages/Categories";
 import AccessAdmin from "./pages/AccessAdmin";
-import EditCategory from "./pages/EditCategory";
+import HandleCategory from "./pages/HandleCategory";
 import Games from "./pages/Games";
 import GameDetails from "./pages/GameDetails";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import User from "./pages/User";
-import UserEdit from "./pages/UserEdit";
+import GamesCategory from "./pages/GamesCategory";
 import Footer from "./components/Footer/Footer";
 import React from 'react';
 
@@ -20,7 +20,7 @@ export default function App() {
   const token = localStorage.getItem("token");
   let decoded;
   if (token) {
-// decoded = jwtDecode(token);
+decoded = jwtDecode(token);
   }
 
   const [userInfo, setUserInfo] = useState({
@@ -66,30 +66,17 @@ export default function App() {
             element={<GameDetails userInfo={userInfo} />}
           />
           <Route
-            path="/categories"
-            element={<Categories userInfo={userInfo} />}
+            path="/games/:categoryId"
+            element={<GamesCategory userInfo={userInfo} />}
           />
+          <Route path="/categories" element={<Categories />} />
           <Route
             path="/editCategory/:categoryId/:categoryName"
-            element={<EditCategory userInfo={userInfo} />}
+            element={<HandleCategory userInfo={userInfo} />}
           />
           <Route path="/login" element={<Login userInfo={userInfo} />} />
-          <Route
-            path="/register"
-            element={
-              <Register userInfo={userInfo} handleLogout={handleLogout} />
-            }
-          />
-          <Route
-            path="/user"
-            element={<User userInfo={userInfo} handleLogout={handleLogout} />}
-          />
-          <Route
-            path="/userEdit"
-            element={
-              <UserEdit userInfo={userInfo} handleLogout={handleLogout} />
-            }
-          />
+          <Route path="/register" element={<Register userInfo={userInfo} />} />
+          <Route path="/user" element={<User userInfo={userInfo} />} />
         </Routes>
       </BrowserRouter>
       {userInfo && <Footer />}

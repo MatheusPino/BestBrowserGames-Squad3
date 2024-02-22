@@ -1,0 +1,106 @@
+.divCardGameDetails {
+  border: 2px solid var(--USE, #89347c);
+  border-right: none;
+  border-top: none;
+  margin: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 40px 60px;
+}
+
+.halfBorderTop {
+  border-bottom: 2px solid var(--USE, #89347c);
+  margin: 0 80px;
+  width: 47%;
+}
+
+.gameInfos {
+  width: 600px;
+}
+
+.gameImg {
+  width: 600px;
+  margin-top: 20px;
+}
+
+.linkGame,
+.gameScore {
+  font-size: 16px;
+}
+
+.ratingDescription {
+  width: 600px;
+  height: 113.829px;
+  padding: 10px;
+  resize: none;
+}
+
+.gameScoreImg {
+  width: 50px;
+  height: 70px;
+  margin-right: -10px;
+}
+
+.gameDetailsTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divGameScore {
+  display: flex;
+  align-items: center;
+}
+
+.gameCategoryName {
+  margin: 10px 0;
+}
+
+.gameDescription {
+  margin-bottom: 30px;
+}
+
+.starsRating {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.rateGame {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.ratingStar {
+  margin-left: 10px;
+  width: 30px;
+}
+
+.maxRating {
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+.btnSendRating {
+  margin-top: 25px;
+}
+
+.divBtnPrevious {
+  margin: 50px 0;
+}
+
+.rateScore {
+  width: 75px;
+  height: 40px;
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+.divAskLogin {
+  margin-top: 80px;
+}
+
+.btnsAskLogin {
+  margin: 20px;
+}

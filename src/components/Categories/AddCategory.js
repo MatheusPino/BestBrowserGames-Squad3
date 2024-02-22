@@ -30,7 +30,7 @@ export default function AddCategory() {
       const resposta = await response.json();
       console.log(resposta);
       if (response.status === 201) {
-        navigate("/categories");
+        navigate("/accessAdmin");
       } else {
         setAlert(resposta);
       }
