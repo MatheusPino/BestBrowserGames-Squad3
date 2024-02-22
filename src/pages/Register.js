@@ -4,6 +4,7 @@ import "../components/Register/Register.css";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import BorderTopGradient from "../components/BorderTopGradient";
+import AlertError from "../components/AlertError";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -100,11 +101,8 @@ export default function Register() {
             value={register.state}
             handleEvent={handleInputChange}
           />
-        </form>
-        <span className="errorDescription errorRegister">
-          {alertError.length > 0 &&
-            alertError.map((item) => <p key={item.message}>{item.message}</p>)}
-        </span>
+        </form>        
+        <AlertError alertError={alertError} classCSS="errorRegister" />
         <Button
           text="Cadastrar"
           type="button"

@@ -1,14 +1,9 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../components/Categories/Categories.css";
-import AddCategory from "../components/Categories/AddCategory";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
-export default function Categories(props) {
-  const { userInfo } = props;
-
-  let isAdmin = userInfo.roles === "admin";
-
+export default function Categories() {
   const [category, setCategory] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [alertError, setAlert] = useState("");
@@ -35,41 +30,21 @@ export default function Categories(props) {
         <div className="divFlexCenter">
           <h2 className="title2 titleGradient">CATEGORIAS</h2>
           <div className="categoryButtons">
-            {isAdmin && (
-              <p className="description">
-                Para editar as categorias de jogos basta clicar na categoria, e
-                para novas categorias basta preencher o campo e clicar no botão
-                de inserir!
-              </p>
-            )}
+            <p className="description">
+              Explore a variedade de jogos por categoria! Encontre aventuras
+              emocionantes, desafios de estratégia, experiências relaxantes e
+              muito mais. De ação a quebra-cabeças, tem game para todos os
+              gostos. Encontre seu próximo favorito aqui!
+            </p>
             {category.map((category) => (
-              <>
-                {isAdmin ? (
-                  <>
-                    <Link
-                      to={`/editCategory/${category["_id"]}/${category["name"]}`}
-                    >
-                      <Button
-                        text={category.name}
-                        classCSS="btnBorderGradient category"
-                        key={category["_id"]}
-                      />
-                    </Link>
-                  </>
-                ) : (
-                  <Button
-                    text={category.name}
-                    classCSS="btnBorderGradient category"
-                    key={category["_id"]}
-                  />
-                )}
-              </>
+              <Link to={`/games/${category["_id"]}`} >
+              <Button
+                text={category.name}
+                classCSS="btnBorderGradient category"
+                key={category["_id"]}
+              />
+              </Link>
             ))}
-            {isAdmin && (
-              <div className="divAddCategory">
-                <AddCategory />
-              </div>
-            )}
           </div>
         </div>
       ) : (

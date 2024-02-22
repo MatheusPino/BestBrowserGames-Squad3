@@ -39,7 +39,7 @@ export default function Header(props) {
             {userInfo.roles === "admin" && (
               <div>
                 <Link to="/accessAdmin">
-                  <Button text="Cadastrar" />
+                  <Button text="Acesso Admin" />
                 </Link>
               </div>
             )}

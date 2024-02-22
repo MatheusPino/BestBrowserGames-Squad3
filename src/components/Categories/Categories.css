@@ -30,6 +30,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 80px;
 }
 
 .categoryButtons > p {
@@ -45,3 +46,14 @@ button.insert {
   margin-left: 15px;
 }
 
+.divHandleCategory {
+  margin: 40px 0 80px 0;
+}
+
+.divBtnsHandleCategory {
+  margin: 40px 0;
+}
+
+.btnHandleCategory {
+  margin: 0 10px;
+}

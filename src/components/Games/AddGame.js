@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Games.css";
 import Input from "../Input";
 import Button from "../Button";
+import AlertError from "../AlertError";
 
 export default function AddGame() {
   const navigate = useNavigate();
@@ -92,11 +93,12 @@ export default function AddGame() {
           </select>
           <Input
             label="Descrição:"
-            type="text"
+            textarea="true"
             name="description"
             value={newGame.description}
             handleEvent={handleInputChange}
             classCSS="inputNewGame inputDescription"
+            placeholder="A descrição do jogo deve conter entre 3 e 255 caracteres."
           />
           <Input
             label="Endereço URL do site do jogo:"
@@ -107,7 +109,7 @@ export default function AddGame() {
             classCSS="inputNewGame"
           />
           <Input
-            label="Endereço URL de uma imagem do jogo:"
+            label="Endereço URL da imagem oficial do jogo:"
             type="text"
             name="imageURL"
             value={newGame.imageURL}
@@ -123,10 +125,7 @@ export default function AddGame() {
             classCSS="inputNewGame"
           />
         </form>
-        <span className="errorDescription errorNewGame">
-          {alertError.length > 0 &&
-            alertError.map((item) => <p key={item.message}>{item.message}</p>)}
-        </span>
+        <AlertError alertError={alertError} classCSS="errorNewGame"/>
         <Button
           text="Cadastrar"
           classCSS="btnGradient insertNewGame"

@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CardGameDetails from "../components/CardGameDetails/CardGameDetails";
+import Button from "../components/Button";
 
 export default function Games(props) {
   const { userInfo } = props;
 
   const [game, setGame] = useState([]);
-  const [loaded, setLoaded] = useState(false);
-  const [alertError, setAlert] = useState("");
+  // const [loaded, setLoaded] = useState(false);
+  // const [alertError, setAlert] = useState("");
 
   useEffect(() => {
     fetch("https://api-best-browser-games.vercel.app/games", {
@@ -17,16 +19,26 @@ export default function Games(props) {
       console.log(games);
       if (response.status === 200) {
         setGame(games);
-        setLoaded(true);
+        // setLoaded(true);
       } else {
-        setAlert("Não foi possível carregar o conteúdo.");
+        // setAlert("Não foi possível carregar o conteúdo.");
       }
     });
   }, []);
 
+  const [gameDetails, setGameDetails] = useState(true);
+  const [index, setIndex] = useState(0);
+
+  function handleGameDetails(index) {
+    if (index) {
+      setIndex(index);
+    }
+    setGameDetails(!gameDetails);
+  }
+
   return (
     <>
-      {loaded ? (
+      {gameDetails ? (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead className="w-full text-xs text-gray-700 uppercase bg-gray-50">
@@ -52,17 +64,17 @@ export default function Games(props) {
                     {game.name}
                   </td>
                   <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    {game.category? game.category.name : "Sem categoria"}
+                    {game.category ? game.category.name : "Sem categoria"}
                   </td>
                   <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                     {game.score || "Sem avaliação"}
                   </td>
                   <td>
                     <Link to={`/gameDetails/${game["_id"]}`}>
-                      <button className="px-6 py-4">Visualizar detalhes</button>
-                    </Link>
-                    <Link to={`/`}>
-                      <button className="px-6 py-4">Avaliar</button>
+                      <Button
+                        text="Visualizar detalhes"
+                        classCSS="btnGradient"
+                      />
                     </Link>
                   </td>
                 </tr>
@@ -76,7 +88,11 @@ export default function Games(props) {
           )}
         </div>
       ) : (
-        <h3>Loading...</h3> || {alertError}
+        <CardGameDetails
+          game={game[index]}
+          userInfo={userInfo}
+          handleEvent={handleGameDetails}
+        />
       )}
     </>
   );
