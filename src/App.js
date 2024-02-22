@@ -92,7 +92,7 @@ export default function App() {
           />
         </Routes>
       </BrowserRouter>
-      <Footer />
+      {userInfo && <Footer />}
     </>
   );
 }
