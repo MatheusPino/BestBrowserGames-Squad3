@@ -2,10 +2,19 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-body {
+html, body {
   background: linear-gradient(90deg, #080c27 0%, #2b153b 100%);
   color: #fff;
   font-family: Poppins, sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .title1 {
@@ -45,6 +54,10 @@ body {
 .btnGradient {
   border-radius: 5px;
   background: linear-gradient(95deg, #521d82 3.55%, #89347c 100%);
+}
+
+.btnGradient:hover {
+  cursor: pointer;
 }
 
 .btnBorderGradient {
@@ -138,4 +151,8 @@ body {
 
 .divAccessAdmin {
   margin-top: 50px;
+}
+
+footer {
+  margin-top: auto;
 }
