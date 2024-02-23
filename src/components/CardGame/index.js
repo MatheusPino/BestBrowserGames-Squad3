@@ -4,7 +4,10 @@ import Star from "../CardGameDetails/Star.svg";
 export default function CardGame({game}) {
   const urlImage = game.imageURL;
   const title = game.name;
-  const category = game.category.name;
+  let category;
+  if(game.category){
+    category = game.category.name;
+  }
   const rating = game.score;
   const description = game.description;
 

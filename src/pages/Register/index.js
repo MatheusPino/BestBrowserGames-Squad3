@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../components/Register/Register.css";
-import Button from "../components/Button";
-import Input from "../components/Input";
-import BorderTopGradient from "../components/BorderTopGradient";
-import AlertError from "../components/AlertError";
+import "./Register.css";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
+import BorderTopGradient from "../../components/BorderTopGradient";
+import AlertError from "../../components/AlertError";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -25,6 +25,30 @@ export default function Register() {
     setRegister({ ...register, [name]: value });
   };
 
+  const handleLogin = () => {
+    fetch("https://api-best-browser-games.vercel.app/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: register.email,
+        password: register.password,
+      }),
+    }).then(async (response) => {
+      console.log(response.status);
+      const resposta = await response.json();
+      console.log(resposta);
+      if (response.status === 201) {
+        localStorage.setItem("token", resposta.token);
+        navigate("/");
+        window.location.reload();
+      } else {
+        setAlert(["Usuário e/ou senha inválido(s)."]);
+      }
+    });
+  };
+
   const handleSave = () => {
     fetch("https://api-best-browser-games.vercel.app/users", {
       method: "POST",
@@ -37,9 +61,7 @@ export default function Register() {
       const resposta = await response.json();
       console.log(resposta);
       if (response.status === 201) {
-        localStorage.setItem("token", resposta.token);
-        navigate("/");
-        window.location.reload();
+        handleLogin();
       } else {
         setAlert(resposta);
       }
@@ -101,7 +123,7 @@ export default function Register() {
             value={register.state}
             handleEvent={handleInputChange}
           />
-        </form>        
+        </form>
         <AlertError alertError={alertError} classCSS="errorRegister" />
         <Button
           text="Cadastrar"

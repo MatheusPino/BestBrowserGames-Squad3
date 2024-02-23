@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../components/Login/Login.css";
-import Button from "../components/Button";
-import Input from "../components/Input";
-import BorderTopGradient from "../components/BorderTopGradient";
+import "./Login.css";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
+import BorderTopGradient from "../../components/BorderTopGradient";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -70,7 +70,9 @@ export default function Login() {
 
         <span className="errorDescription">{alertError}</span>
 
-        <p className="description descLogin">Ainda não possui uma conta? Clique aqui!</p>
+        <p className="description descLogin">
+          Ainda não possui uma conta? Clique aqui!
+        </p>
         <Link to="/register">
           <Button text="Cadastre-se" classCSS="btnBorderGradient register" />
         </Link>

@@ -84,18 +84,24 @@ export default function CardGameDetails(props) {
       <div className="divCardGameDetails">
         <div className="gameInfos">
           <div className="gameDetailsTitle">
-            <h3 className="title2">{game.name}</h3>
+            <h3 className="title2">{game.name && game.name}</h3>
             <div className="divGameScore">
               <img
                 src={Star}
                 className="gameScoreImg"
                 alt={`Estrela de avaliação`}
               ></img>
-              <p className="description gameScore">{game.score}/5</p>
+              <p className="description gameScore">
+                {game.score && game.score}/5
+              </p>
             </div>
           </div>
-          <p className="title3 gameCategoryName">{game.category.name}</p>
-          <p className="description gameDescription">{game.description}</p>
+          <p className="title3 gameCategoryName">
+            {game.category && game.category.name}
+          </p>
+          <p className="description gameDescription">
+            {game.description && game.description}
+          </p>
           <p className="linkGame">
             <a href={game.url} target="_blank" rel="noreferrer">
               Link do game
@@ -111,11 +117,11 @@ export default function CardGameDetails(props) {
           {userInfo.name ? (
             <>
               <div className="rateGame">
-              {ratingId ? (
+                {ratingId ? (
                   <label>Avaliação feita:</label>
                 ) : (
                   <label>Avalie o game:</label>
-                )}                
+                )}
                 <div className="starsRating">
                   <select
                     className="inputBorderGradient rateScore"

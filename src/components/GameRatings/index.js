@@ -7,7 +7,7 @@ export default function GameRatings({ game, userInfo }) {
   const [ratings, setRatings] = useState([]);
 
   useEffect(() => {
-    game.ratings.map((rating) => {
+    game.ratings.map(rating => {
       if (rating.user !== userInfo["_id"]) {
         setRatings([...ratings, rating]);
       }
