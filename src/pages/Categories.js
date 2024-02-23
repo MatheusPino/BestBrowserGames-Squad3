@@ -37,7 +37,7 @@ export default function Categories() {
               gostos. Encontre seu próximo favorito aqui!
             </p>
             {category.map((category) => (
-              <Link to={`/games/${category["_id"]}`} >
+              <Link to={`/games/${category["_id"]}/${category.name}`} >
               <Button
                 text={category.name}
                 classCSS="btnBorderGradient category"

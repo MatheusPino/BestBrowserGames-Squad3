@@ -111,7 +111,11 @@ export default function CardGameDetails(props) {
           {userInfo.name ? (
             <>
               <div className="rateGame">
-                <label>Avalie o game:</label>
+              {ratingId ? (
+                  <label>Avaliação feita:</label>
+                ) : (
+                  <label>Avalie o game:</label>
+                )}                
                 <div className="starsRating">
                   <select
                     className="inputBorderGradient rateScore"

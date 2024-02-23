@@ -66,7 +66,7 @@ export default function App() {
             element={<GameDetails userInfo={userInfo} />}
           />
           <Route
-            path="/games/:categoryId"
+            path="/games/:categoryId/:categoryName"
             element={<GamesCategory userInfo={userInfo} />}
           />
           <Route path="/categories" element={<Categories />} />
