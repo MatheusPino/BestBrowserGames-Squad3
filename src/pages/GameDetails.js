@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CardGameDetails from "../components/CardGameDetails/CardGameDetails";
-import GameRatings from "../components/GameRatings/GameRatings";
+import CardGameDetails from "../components/CardGameDetails";
+import GameRatings from "../components/GameRatings";
 
 export default function GameDetails(props) {
   const { userInfo } = props;

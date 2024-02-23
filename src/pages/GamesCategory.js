@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import CardGame from "../components/CardGame/CardGame";
+import CardGame from "../components/CardGame";
 import Button from "../components/Button";
 
 export default function GamesCategory() {
@@ -9,17 +9,16 @@ export default function GamesCategory() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("https://api-best-browser-games.vercel.app/games", {
-      method: "GET",
-    }).then(async (response) => {
+    fetch(
+      `https://api-best-browser-games.vercel.app/games?name=&categoryId=${categoryId}`,
+      {
+        method: "GET",
+      }
+    ).then(async (response) => {
       console.log(response.status);
-      const games = await response.json();
-      console.log(games);
-      let filterGames = [...games].filter(
-        (obj) => obj.category["_id"] === categoryId
-      );
-      console.log(filterGames);
-      setGames(filterGames);
+      const filteredGames = await response.json();
+      console.log(filteredGames);
+      setGames(filteredGames);
       setLoaded(true);
     });
     // eslint-disable-next-line

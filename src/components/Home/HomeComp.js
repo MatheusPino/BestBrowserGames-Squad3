@@ -33,7 +33,7 @@ export default function HomeComp({ userInfo }) {
         </div>
         <DivGradient />
         <div>
-          <img src={Union} className="borda" />
+          <img src={Union} className="borda" alt="Borda gradiente"/>
           <div className="home2">
             <img
               src={Card2}

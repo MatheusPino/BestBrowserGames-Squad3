@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import Categories from "./pages/Categories";
 import AccessAdmin from "./pages/AccessAdmin";
 import HandleCategory from "./pages/HandleCategory";
@@ -13,7 +13,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import User from "./pages/User";
 import GamesCategory from "./pages/GamesCategory";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer";
 import React from "react";
 
 export default function App() {
