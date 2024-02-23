@@ -1,0 +1,27 @@
+.titleRegister {
+  margin-top: 35px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+span>p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+label {
+  margin-top: 20px;
+}
+
+button.registerSend {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.errorRegister {
+  margin-bottom: -20px;
+}

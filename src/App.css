@@ -1,3 +1,167 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+html,
+body {
+  background: linear-gradient(90deg, #080c27 0%, #2b153b 100%);
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.title1 {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 108.434%; /* 86.747px */
+}
+
+.title2 {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.title3 {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.titleGradient {
+  background: var(--text, linear-gradient(90deg, #3f5efb 5.21%, #fc466b 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btnGradient {
+  border-radius: 5px;
+  background: linear-gradient(95deg, #521d82 3.55%, #89347c 100%);
+}
+
+.btnGradient:hover {
+  cursor: pointer;
+}
+
+.btnBorderGradient {
+  border-radius: 5px;
+  border: 2px solid var(--USE, #89347c);
+}
+
+.btnGradient,
+.btnBorderGradient {
+  width: 173px;
+  height: 54px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.label {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.description {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.divGradient {
+  width: 1255.213px;
+  height: 39.192px;
+  background: linear-gradient(90deg, #f77e75 0%, #89347c 50%, #561e81 100%);
+}
+
+.divFlexCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorDescription {
+  font-size: 16px;
+  color: #868794;
+}
+
+.borderTopGradient {
+  height: 1px;
+  background: linear-gradient(90deg, #521d82 0.57%, #f77e75 97.29%);
+}
+
+.inputBorderGradient {
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid var(--USE, #89347c);
+  background: transparent;
+  color: #868794;
+  width: 500px;
+  height: 54px;
+  flex-shrink: 0;
+  margin-top: 7px;
+  padding: 14px 10px;
+}
+
+.divGradient {
+  width: 1255px;
+  height: 40px;
+  background: linear-gradient(90deg, #f77e75 0%, #89347c 50%, #561e81 100%);
+}
+
+.loading {
+  text-align: center;
+  margin: 20px;
+}
+
+.descAccessAdmin {
+  width: 780px;
+  margin: 30px 0 60px 20px;
+}
+
+.divAccessAdmin {
+  margin-top: 50px;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.divRestrictedAccess {
+  margin: 40px 0;
+}
+
+.btnRestrictedAccess {
+  width: 250px;
+  margin-top: 40px;
+}

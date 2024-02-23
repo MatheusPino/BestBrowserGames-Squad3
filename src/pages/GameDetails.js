@@ -1,21 +1,30 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CardGameDetails from "../components/CardGameDetails";
+import GameRatings from "../components/GameRatings";
 
-export default function EditCategory() {
-  // const { userInfo, handleLogout } = props;
+export default function GameDetails(props) {
+  const { userInfo } = props;
 
   const { gameId } = useParams();
 
   const [gameDetails, setGameDetails] = useState({});
   const [loaded, setLoaded] = useState(false);
+  const [alertError, setAlert] = useState("");
 
   useEffect(() => {
     fetch(`https://api-best-browser-games.vercel.app/games/${gameId}`, {
       method: "GET",
     }).then(async (response) => {
+      console.log(response.status);
       const game = await response.json();
-      setGameDetails(game);
-      setLoaded(true);
+      console.log(game);
+      if (response.status === 200) {
+        setGameDetails(game);
+        setLoaded(true);
+      } else {
+        setAlert("Não foi possível carregar o conteúdo.");
+      }
     });
   }, [gameId]);
 
@@ -23,21 +32,11 @@ export default function EditCategory() {
     <>
       {loaded ? (
         <>
-          <h3>Informações do jogo</h3>
-          <img src={gameDetails.imageURL} width={60} alt={`Jogo ${gameDetails.name}`}></img>
-          <p>Nome: {gameDetails.name}</p>
-          <p>Categoria: {gameDetails.category.name}</p>
-          <p>Descrição: {gameDetails.description}</p>
-          <p>Site: <a href={gameDetails.url} target="_blank" rel="noreferrer">{gameDetails.url}</a></p>
-
-          {gameDetails.videoURL !== "" && (
-          <video width="320" height="240" controls>
-            <source src={gameDetails.videoURL} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>)}
+          <CardGameDetails userInfo={userInfo} game={gameDetails} />
+          <GameRatings userInfo={userInfo} game={gameDetails} />
         </>
       ) : (
-        <h3>Loading...</h3>
+        <h3 className="title3 loading">Loading...</h3> || { alertError }
       )}
     </>
   );

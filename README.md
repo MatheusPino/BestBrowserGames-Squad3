@@ -66,6 +66,3 @@ Esse desafio compõe o projeto final do 5º módulo do curso [Vem Ser Tech - Fro
 - [Luisa Correia](https://github.com/luisacs923)👩🏻‍💻;
 - [Matheus Pino](https://github.com/matheuspino)👨🏻‍💻;
 - [Paulo Lemes](https://github.com/paulo-lemes)👨🏻‍💻;
-
-
-

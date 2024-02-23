@@ -1,0 +1,73 @@
+option {
+  background-color: black;
+  color: white;
+}
+
+.inputNewGame {
+  width: 800px;
+}
+
+.inputDescription {
+  height: 115px;
+}
+
+button.insertNewGame {
+  margin-top: 100px;
+  margin-bottom: 130px;
+}
+
+.errorNewGame {
+  margin-bottom: -50px;
+}
+
+.deleteGame {
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+
+.deleteGame > form {
+  width: 800px;
+  display: inline;
+}
+
+.btnDeleteGame {
+  margin-left: 15px;
+}
+
+.inputDeleteGame {
+  width: 610px;
+}
+
+.titleGradientSearch {
+  background: linear-gradient(96deg, #f77e75 42.13%, #89347c 83.23%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.divSearchGame {
+  margin-bottom: 50px;
+}
+
+.inputSearchName {
+  width: 850px;
+  background: url("./SearchIcon.svg") no-repeat left;
+  background-size: 18px;
+  background-position: 25px;
+  padding-left: 70px;
+  color: #FFF;
+}
+
+.inputSearchCategory {
+  width: 240px;
+  margin: 0 18px;
+  background: url("./DownIcon.svg") no-repeat left;
+  background-size: 18px;
+  background-position: 25px;
+  padding-left: 70px;
+  color: #FFF;
+}
+
+.titleSearchGames {
+  margin-bottom: 70px;
+}

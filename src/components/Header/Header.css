@@ -1,0 +1,59 @@
+body {
+  opacity: 0.75;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.active-style {
+  background: linear-gradient(90deg, #89347c 0%, #f77e75 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  margin-left: 70px;
+}
+
+.logo {
+  margin: 40px;
+}
+
+.userLogin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+  width: 120px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  min-width: 120px;
+  z-index: 1;
+  font-size: 15px;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

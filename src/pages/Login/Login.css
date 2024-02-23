@@ -1,0 +1,42 @@
+h2.titleLogin {
+  margin-top: 35px;
+}
+
+form.login {
+  display: flex;
+  flex-direction: column;
+}
+
+p.descLogin {
+  margin-top: 80px;
+}
+
+label {
+  font-size: 16px;
+  margin-top: 120px;
+}
+
+button.login {
+  font-size: 16px;
+  width: 173px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: linear-gradient(95deg, #521d82 3.55%, #89347c 100%);
+  margin-top: 50px;
+}
+
+button.register {
+  font-size: 16px;
+  width: 173px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 2px solid var(--USE, #89347c);
+  margin-top: 20px;
+  margin-bottom: 85px;
+}
+
+span {
+  margin-top: 20px;
+}
