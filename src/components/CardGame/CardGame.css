@@ -1,0 +1,50 @@
+.card {
+  margin: 25px;
+  width: 400px;
+  height: 680px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 2px solid var(--USE, #89347c);
+}
+
+.cardGameTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardGameImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.cardGameImage>img {
+  max-width: 370px;
+  max-height: 370px;
+}
+
+.cardInfos {
+  padding: 15px;
+  font-size: 14px;
+}
+
+.clickForDetails, .cardGameDescription, .categoryGameCard {
+  margin-top: 7px;
+}
+
+.divGamesCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.categoryGameCard {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

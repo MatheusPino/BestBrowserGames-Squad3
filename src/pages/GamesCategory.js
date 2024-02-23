@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import CardGame from "../components/CardGame/CardGame";
+import Button from "../components/Button";
 
 export default function GamesCategory() {
-  const { categoryId } = useParams();
+  const { categoryId, categoryName } = useParams();
   const [games, setGames] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
@@ -19,18 +21,35 @@ export default function GamesCategory() {
       console.log(filterGames);
       setGames(filterGames);
       setLoaded(true);
-    });    
+    });
     // eslint-disable-next-line
   }, []);
 
   return (
     <>
       {loaded ? (
-        games.length > 0 ? (
-          games.map((game) => <p key={game["_id"]}>{game.name}</p>)
-        ) : (
-          <p className="loading">Nenhum jogo encontrado</p>
-        )
+        <div className="divFlexCenter">
+          <h2 className="title2">
+            <span className="titleGradient">{categoryName.toUpperCase()}</span>{" "}
+            GAMES
+          </h2>
+          <div className="divGamesCard">
+            {games.length > 0 ? (
+              games.map((game) => (
+                <Link to={`/gameDetails/${game["_id"]}`} key={game._id}>
+                  <CardGame game={game} />
+                </Link>
+              ))
+            ) : (
+              <p className="loading">Nenhum jogo encontrado</p>
+            )}
+          </div>
+          <div className="divBtnPrevious">
+            <Link to="/categories">
+              <Button text="Voltar" classCSS="btnBorderGradient" />
+            </Link>
+          </div>
+        </div>
       ) : (
         <h3 className="loading">Loading...</h3>
       )}

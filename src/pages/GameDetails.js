@@ -36,7 +36,7 @@ export default function GameDetails(props) {
           <GameRatings userInfo={userInfo} game={gameDetails} />
         </>
       ) : (
-        <h3 className="title3">Loading...</h3> || { alertError }
+        <h3 className="title3 loading">Loading...</h3> || { alertError }
       )}
     </>
   );

@@ -50,7 +50,7 @@ export default function Register() {
     <>
       <BorderTopGradient />
       <div className="divFlexCenter">
-        <h2 className="title3">Cadastro</h2>
+        <h2 className="title3 titleRegister">Cadastro</h2>
         <form className="">
           <Input
             label="Nome:"

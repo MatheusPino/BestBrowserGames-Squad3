@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import DivGradient from "../DivGradient";
+import { Link } from "react-router-dom";
+import CardGame from "../CardGame/CardGame";
 
 export default function RecommendedGames({ userId }) {
   const [recommendedGames, setRecommendedGames] = useState([]);
@@ -21,7 +23,7 @@ export default function RecommendedGames({ userId }) {
       console.log(recommends);
       setRecommendedGames(recommends);
       setLoaded(true);
-    });    
+    });
     // eslint-disable-next-line
   }, []);
 
@@ -33,11 +35,17 @@ export default function RecommendedGames({ userId }) {
             GAMES <span className="titleGradient">RECOMENDADOS</span>
           </h2>
           <DivGradient />
+          <div className="divGamesCard">
           {recommendedGames.length > 0 ? (
-            recommendedGames.map((game) => <p key={game._id}>{game.name}</p>)
+            recommendedGames.map((game) => (
+              <Link to={`/gameDetails/${game["_id"]}`} key={game._id}>
+                <CardGame game={game} />
+              </Link>
+            ))
           ) : (
             <p className="loading">Nenhum jogo encontrado</p>
           )}
+          </div>
         </>
       ) : (
         <h3 className="loading">Loading...</h3>
