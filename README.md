@@ -1,39 +1,68 @@
-# Projeto Best Browser Games - Squad Algoritmo Ágil
+# Squad-3 - Best Browser Games
 
-O BestBrowserGames é uma comunidade web onde seus membros poderão compartilhar as suas impressões sobre os browser games que já jogaram, identificando o que gostaram e o que não gostaram. Com estas informações, o BestBrowserGames poderá dar para cada membro recomendações de browser games que ele ainda não conhece e que provavelmente irá gostar.
 
-Este projeto tem como objetivo desenvolver uma aplicação web para o BestBrowserGames utilizando o React como framework principal. A aplicação deverá atender:
+# # Repositório criado para atividade do módulo de Front End Dinâmico (JS/DOM) do curso Vem Ser Tech - Front End da Ada 
 
-## Requisitos:
 
-- componentes reutilizáveis e bem estruturados;
-- Props e PropTypes;
-- State e State Lifting;
-- React Router;
-- renderização condicional e de listas;
-- composição de componentes;
-- formulários;
-- métodos do ciclo de vida de componentes;
+Esse desafio compõe o projeto final do 5º módulo do curso [Vem Ser Tech - Front End](https://ada.tech/sou-aluno/programas/ifood-vem-ser-tech), confeccionado pelo Squad 3.
 
-## Funcionalidades:
 
-- cadastro de usuário;
-- login de usuário;
-- atualização de dados do usuário;
-- cadastro e gerenciamento de games (admin);
-- pesquisa por jogos;
-- avaliação de jogos;
-- visualização de avaliações;
-- recomendações de jogos;
+### Descrição do Desafio ⚙️
 
-## Curso Front-End - Ada Tech - Programa Vem Ser Tech iFood
-## Módulo - React I
+● Componentes reutilizáveis e bem estruturados;
 
-## Integrantes da squad
+● Props e PropTypes;
 
-- [Gabriella Freitas](https://github.com/gabriellafsena);
-- [Igor Benez](https://github.com/igor-benez);
-- [Lucas de Grande](https://github.com/);
-- [Luisa Correia](https://github.com/luisacs923);
-- [Matheus Pino](https://github.com/matheuspino);
-- [Paulo Lemes](https://github.com/paulo-lemes);
+● State e State Lifting;
+
+● React Router;
+
+● Renderização condicional e de listas;
+
+● Composição e métodos do ciclo de vida dos componentes;
+
+● Formulários;
+
+## Funcionalidades 📜
+
+● Cadastro de usuário;
+
+● Login;
+
+● Atualização de dados;
+
+● Cadastro e gerenciamento de games(admin);
+
+● Pesquisa por jogos e avaliações;
+
+● Visualização de avaliações;
+
+● Recomendações de jogos.
+
+## Tecnologias e Ferramentas Utilizadas 🕹️
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="130px"> |  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" width="130px"> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" width="130px"> | 
+|----------|----------|----------|
+|  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg" width="130px"> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" width="130px">| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png" width="130px">|
+
+
+
+## Organização do Projeto 📈
+
+● Criamos o backlog;
+
+● Definimos os responsáveis por cada tarefa através do Figma;
+
+● Exploramos o máximo possível dos integrantes para que o projeto atendesse todos os requisitos propostos em aula;
+
+● Definimos a data para finalizar o projeto.
+  
+
+## Integrantes do Grupo 💻
+
+- [Gabriella Freitas](https://github.com/gabriellafsena)👩🏻‍💻;
+- [Igor Benez](https://github.com/igor-benez)👨🏻‍💻;
+- [Lucas de Grande](https://github.com/)👨🏻‍💻;
+- [Luisa Correia](https://github.com/luisacs923)👩🏻‍💻;
+- [Matheus Pino](https://github.com/matheuspino)👨🏻‍💻;
+- [Paulo Lemes](https://github.com/paulo-lemes)👨🏻‍💻;
