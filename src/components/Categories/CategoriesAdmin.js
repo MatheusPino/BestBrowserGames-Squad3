@@ -37,7 +37,7 @@ export default function Categories(props) {
           <div className="categoryButtons">
             {isAdmin && (
               <p className="description">
-                Para editar as categorias de jogos basta clicar na categoria, e
+                Para editar ou excluir as categorias de jogos basta clicar na categoria, e
                 para novas categorias basta preencher o campo e clicar no botão
                 de inserir!
               </p>

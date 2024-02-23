@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Categories.css";
 import DivGradient from "../DivGradient";
 import Button from "../Button";
 import Input from "../Input";
 
 export default function AddCategory() {
-  const navigate = useNavigate();
   const [alertError, setAlert] = useState([]);
   const [nameCategory, setNameCategory] = useState({
     name: "",
@@ -30,7 +28,7 @@ export default function AddCategory() {
       const resposta = await response.json();
       console.log(resposta);
       if (response.status === 201) {
-        navigate("/accessAdmin");
+        window.location.reload()
       } else {
         setAlert(resposta);
       }

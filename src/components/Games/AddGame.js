@@ -64,7 +64,7 @@ export default function AddGame() {
     <>
       <div className="divFlexCenter">
         <h2 className="title2">
-          INFORMAÇÕES DO <span className="titleGradient">GAME</span>
+          CADASTRO DE <span className="titleGradient">GAME</span>
         </h2>
         <form className="">
           <Input
