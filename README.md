@@ -1,7 +1,7 @@
 # Squad-3 - Best Browser Games
 
 
-# # Repositório criado para atividade do módulo de Front End Dinâmico (JS/DOM) do curso Vem Ser Tech - Front End da Ada 
+# # Repositório criado para atividade do módulo de Framework de Front End I(React) do curso Vem Ser Tech - Front End da Ada 
 
 
 Esse desafio compõe o projeto final do 5º módulo do curso [Vem Ser Tech - Front End](https://ada.tech/sou-aluno/programas/ifood-vem-ser-tech), confeccionado pelo Squad 3.
